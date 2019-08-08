@@ -1,139 +1,121 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>SoCal Espresso Bar</title>
-
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet" type="text/css" />
-   
-
-    <!-- Theme CSS -->
-    <link href="css/grayscale.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/grayscale.min.css" rel="stylesheet">
     <style>
-        .thumb
-        {
-            max-height:100px;
+        .thumb {
+            max-height: 100px;
             padding: 4px;
         }
     </style>
 
-    
+
 </head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
+<body id="page-top">
     <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-coffee"></i> <span class="light">SoCal Espresso Bar</span><br />
-                    <b>310-773-8323</b>
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <i class="fa fa-coffee"></i> <span class="light">SoCal Espresso Bar</span><br />
+                <b>310-773-8323</b>
+            </a>
+            <!--<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>-->
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#gallery">Gallery</a>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#testimonials">Testimonials</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#testimonials">Testimonials</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
+    <!-- Header -->
+    <!--<header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">
+                    <img src="img/SoCalEspressoBarTransparent.png" />
+                </h1>
+                <a href="#about" class="btn btn-primary js-scroll-trigger">Get Started</a>
+            </div>
+        </div>
+    </header>-->
 
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <!--<h2 class="brand-heading" style="font-size:4em;">SoCal Espresso Bar</h2>
-                        <p class="intro-text">A mobile espresso bar, bringing the coffee shop to you.</p>-->
-                        <img src="img/SoCalEspressoBarTransparent.png" />
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
-                </div>
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">
+                    <img src="img/SoCalEspressoBarTransparent.png" />
+                </h1>
+                <a href="#about" class="btn btn-circle js-scroll-trigger" style="-webkit-box-shadow: 0;box-shadow:0;">
+                    <i class="fa fa-angle-double-down animated" style="color:white;"></i>
+                </a>
             </div>
         </div>
     </header>
-
     <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About SoCal Espresso Bar</h2>
-                <p>SoCal Espresso Bar is a mobile espresso bar, offering a gourmet coffee shop experience than can be transported and set up in any venue.</p>
-                <p>By adding an espresso bar to your event, guests are sure to find a shot of energy infused into an already special day.</p>
+    <section id="about" class="text-center" style="background-color:white;padding-top:5rem;padding-bottom:5rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>About SoCal Espresso Bar</h2>
+                    <p>
+                        SoCal Espresso Bar is a mobile espresso bar, offering a gourmet coffee shop experience than can be transported and set up in any venue.
+                        <BR /><BR />By adding an espresso bar to your event, guests are sure to find a shot of energy infused into an already special day.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="container content-section text-center">
+    <!-- Gallery Section -->
+    <section id="gallery" class="content-section text-center bg-black" style="padding-top:5rem;padding-bottom:5rem;">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Gallery of Events</h2>
-                <i>(click to view larger)</i>
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white-50">Gallery of Events</h2>
+                <i class="text-white-50">(click to view larger)</i>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row text-center center-block">
-                <a href="img/eb1.jpeg" data-toggle="lightbox" data-gallery="gallery"style="margin:auto auto">
+                <a href="img/eb1.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
                     <img src="img/eb1.jpeg" class="img-fluid rounded thumb">
                 </a>
-                <a href="img/eb2.jpeg" data-toggle="lightbox" data-gallery="gallery"style="margin:auto auto; display:inline">
+                <a href="img/eb2.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto; display:inline">
                     <img src="img/eb2.jpeg" class="img-fluid rounded thumb">
                 </a>
-                <a href="img/eb3.jpeg" data-toggle="lightbox" data-gallery="gallery"style="margin:auto auto">
+                <a href="img/eb3.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
                     <img src="img/eb3.jpeg" class="img-fluid rounded thumb">
                 </a>
-                <a href="img/eb4.jpeg" data-toggle="lightbox" data-gallery="gallery"style="margin:auto auto">
+                <a href="img/eb4.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
                     <img src="img/eb4.jpeg" class="img-fluid rounded thumb">
                 </a>
-                <a href="img/eb5.jpeg" data-toggle="lightbox" data-gallery="gallery"style="margin:auto auto">
+                <a href="img/eb5.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
                     <img src="img/eb5.jpeg" class="img-fluid rounded thumb">
                 </a>
 
@@ -156,15 +138,15 @@
                 </a>
 
             </div>
-            
+
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="testimonials" class="container content-section text-center">
+    <section id="testimonials" class="container content-section text-center" style="padding-top:5rem;padding-bottom:5rem;">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-lg-8 mx-auto">
                 <h2>What Others Have Said</h2>
+                <br />
             </div>
         </div>
         <div class="row">
@@ -203,76 +185,41 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+    <section id="contact" class="content-section text-center bg-black" style="padding-top: 10rem;">
+        <div class="row text-white-50">
+            <div class="col-lg-8 mx-auto">
                 <h2>Contact SoCal Espresso Bar</h2>
                 <p>Feel free to email us to provide some feedback, get a quote from us, or to just say hello!</p>
                 <p>
-                    <a href="mailto:espressobarla@gmail.com">socalespressobar@gmail.com</a>
+                    <a href="mailto:socalespressobar@gmail.com">socalespressobar@gmail.com</a>
                 </p>
                 <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/rocketcityexpresso" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/socalespressobar" class="btn btn-default btn-lg text-white-50" target="_blank"><i class="fab fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
-                    <li>
-                        <a href="https://www.facebook.com/pg/rocketcityexpresso/" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/pg/socalespressobar/" class="btn btn-default btn-lg text-white-50" target="_blank"><i class="fab fa-facebook fa-fw"></i> <span class="network-name text-white-50">Facebook</span></a>
                     </li>
-                    <li>
-                        <a href="https://www.instagram.com/rocketcityexpresso/" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/socalespressobar/" class="btn btn-default btn-lg text-white-50" target="_blank"><i class="fab fa-instagram fa-fw"></i> <span class="network-name text-white-50">Instagram</span></a>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Map Section
-    <div id="map"></div>-->
     <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>
-                Copyright &copy;2017
-                <script>new Date().getFullYear() > 2017 && document.write("-" + new Date().getFullYear());</script>, SoCal Espresso Bar.
-            </p>
+    <footer class="bg-black small text-center text-white-50">
+        <div class="container">
+            Copyright &copy; SoCal Espresso Bar 2019
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
-
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-63191643-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-
-    <script>
-        $(document).on("click", '[data-toggle="lightbox"]', function (event) {
-            event.preventDefault();
-            $(this).ekkoLightbox();
-        });
-    </script>
-
-
 </body>
-
 </html>
