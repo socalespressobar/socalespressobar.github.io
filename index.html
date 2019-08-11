@@ -19,13 +19,191 @@
             max-height: 100px;
             padding: 4px;
         }
+
         row {
-            margin-right:0px;
+            margin-right: 0px;
             margin-left: 0px;
+        }
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Create four equal columns that floats next to eachother */
+        .column {
+            float: left;
+            width: 20%;
+        }
+
+            .column img {
+                
+                padding-top: 5px;
+                max-width: 90%;
+            }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: inherit;
+            margin: auto;
+            padding: 0;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            position: relative;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+            z-index:1000;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #999;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        /* Hide the slides by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Caption text */
+        .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        img.demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+
+        img.hover-shadow {
+            transition: 0.3s;
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
     </style>
 
+    <script>
+        // Open the Modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
 
+        // Close the Modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            //var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            if (slides[slideIndex - 1] != undefined)
+            {
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                //captionText.innerHTML = dots[slideIndex - 1].alt;
+            }
+        }
+    </script>
 </head>
 <body id="page-top">
     <!-- Navigation -->
@@ -106,44 +284,45 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row text-center center-block">
-                <a href="img/eb1.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
-                    <img src="img/eb1.jpeg" class="img-fluid rounded thumb">
-                </a>
-                <a href="img/eb2.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto; display:inline">
-                    <img src="img/eb2.jpeg" class="img-fluid rounded thumb">
-                </a>
-                <a href="img/eb3.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
-                    <img src="img/eb3.jpeg" class="img-fluid rounded thumb">
-                </a>
-                <a href="img/eb4.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
-                    <img src="img/eb4.jpeg" class="img-fluid rounded thumb">
-                </a>
-                <a href="img/eb5.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
-                    <img src="img/eb5.jpeg" class="img-fluid rounded thumb">
-                </a>
 
+            <!-- Images used to open the lightbox -->
+            <div class="row">
+                <div class="column">
+                    <img src="img/ebt1.jpeg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+                </div>
+                <div class="column">
+                    <img src="img/ebt2.jpeg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                </div>
+                <div class="column">
+                    <img src="img/ebt3.jpeg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                </div>
+                <div class="column">
+                    <img src="img/ebt4.jpeg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+                </div>
+                <div class="column">
+                    <img src="img/ebt5.jpeg" onclick="openModal();currentSlide(5)" class="hover-shadow">
+                </div>
             </div>
-            <div class="row text-center center-block">
-                <a href="img/eb6.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
-                    <img src="img/eb6.jpeg" class="img-fluid rounded thumb">
-                </a>
-                <a href="img/eb7.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto; display:inline">
-                    <img src="img/eb7.jpeg" class="img-fluid rounded thumb">
-                </a>
-                <a href="img/eb8.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
-                    <img src="img/eb8.jpeg" class="img-fluid rounded thumb">
-                </a>
-                <a href="img/eb9.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
-                    <img src="img/eb9.jpeg" class="img-fluid rounded thumb">
-                </a>
-                <a href="img/eb10.jpeg" data-toggle="lightbox" data-gallery="gallery" style="margin:auto auto">
-                    <img src="img/eb10.jpeg" class="img-fluid rounded thumb">
-                </a>
-
+            <div class="row">
+                <div class="column">
+                    <img src="img/ebt6.jpeg" onclick="openModal();currentSlide(6)" class="hover-shadow">
+                </div>
+                <div class="column">
+                    <img src="img/ebt7.jpeg" onclick="openModal();currentSlide(7)" class="hover-shadow">
+                </div>
+                <div class="column">
+                    <img src="img/ebt8.jpeg" onclick="openModal();currentSlide(8)" class="hover-shadow">
+                </div>
+                <div class="column">
+                    <img src="img/ebt9.jpeg" onclick="openModal();currentSlide(9)" class="hover-shadow">
+                </div>
+                <div class="column">
+                    <img src="img/ebt10.jpeg" onclick="openModal();currentSlide(10)" class="hover-shadow">
+                </div>
             </div>
 
         </div>
+
     </section>
 
     <section id="testimonials" class="container content-section text-center" style="padding-top:5rem;padding-bottom:5rem;">
@@ -225,5 +404,116 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+
+    <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 10</div>
+                <img src="img/eb1_wide.jpeg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 10</div>
+                <img src="img/eb2_wide.jpeg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 10</div>
+                <img src="img/eb3_wide.jpeg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 10</div>
+                <img src="img/eb4_wide.jpeg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 10</div>
+                <img src="img/eb5_wide.jpeg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 10</div>
+                <img src="img/eb6_wide.jpeg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">7 / 10</div>
+                <img src="img/eb7_wide.jpeg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">8 / 10</div>
+                <img src="img/eb8_wide.jpeg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">9 / 10</div>
+                <img src="img/eb9_wide.jpeg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">10 / 10</div>
+                <img src="img/eb10_wide.jpeg" style="width:100%">
+            </div>
+
+            <!-- Next/previous controls -->
+            <a class="prev" onclick="plusSlides(-1)" style="color:white;">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)" style="color:white;">&#10095;</a>
+
+            <!-- Caption text -->
+            <!--<div class="caption-container" style="display:none;">
+            <p id="caption"></p>
+        </div>-->
+            <!-- Thumbnail image controls -->
+            <div class="row">
+                <div class="column">
+                    <img class="demo" src="img/ebt1.jpeg" onclick="currentSlide(1)" alt="">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="img/ebt2.jpeg" onclick="currentSlide(2)" alt="">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="img/ebt3.jpeg" onclick="currentSlide(3)" alt="">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="img/ebt4.jpeg" onclick="currentSlide(4)" alt="">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="img/ebt5.jpeg" onclick="currentSlide(5)" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <img class="demo" src="img/ebt6.jpeg" onclick="currentSlide(6)" alt="">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="img/ebt7.jpeg" onclick="currentSlide(7)" alt="">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="img/ebt8.jpeg" onclick="currentSlide(8)" alt="">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="img/ebt9.jpeg" onclick="currentSlide(9)" alt="">
+                </div>
+
+                <div class="column">
+                    <img class="demo" src="img/ebt10.jpeg" onclick="currentSlide(10)" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>
